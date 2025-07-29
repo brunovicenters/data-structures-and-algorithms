@@ -4,7 +4,7 @@ class Queue:
     def __init__(self, capacity):
         self.capacity = capacity
         self.start = 0
-        self.finish = -1
+        self.end = -1
         self.num_el = 0
         self.values = np.empty(self.capacity, dtype=int)
 
@@ -19,11 +19,11 @@ class Queue:
             print("Queue is full!")
             return
 
-        if self.finish == self.capacity - 1:
-            self.finish = -1
-        self.finish += 1
+        if self.end == self.capacity - 1:
+            self.end = -1
+        self.end += 1
 
-        self.values[self.finish] = value
+        self.values[self.end] = value
 
         self.num_el += 1
 
